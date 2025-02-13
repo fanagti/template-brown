@@ -82,7 +82,35 @@
     background: none;
     border: none;
 }
-
+.map-container {
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Memastikan gambar menyesuaikan dengan 4:3 */
+        }
   </style>
 
   <!-- =======================================================
@@ -117,7 +145,6 @@
           <ul>
             <li><a href="#about" class="active">Home</a></li>
             <li><a href="#recent-posts">Event</a></li>
-            <li><a href="#services">Profil</a></li>
             <li><a href="#portfolio">Gallery</a></li>
             <li><a href="#history">History</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -149,7 +176,7 @@
               <h2 class="animate__animated animate__fadeInDown" style="color: white;">Welcome to
                 <span>Bundaru.com</span>
               </h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
+              <p class="animate__animated animate__fadeInUp ms-2" >Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
                 ut
                 et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
                 Esse
@@ -226,7 +253,7 @@
                 <p>Bandaru.com</p>
               </div><!-- End Section Title -->
               <p class="ms-3">Selamat Datang di Desa suka maju – Rumah Budaya Tari yang Memukau </p>
-              <p>Di desa kami, kebudayaan tari bukan sekadar tradisi, tetapi juga bagian dari identitas yang diwariskan
+              <p style="text-indent: 20px;padding-left: 30px; text-align: justify;">Di desa kami, kebudayaan tari bukan sekadar tradisi, tetapi juga bagian dari identitas yang diwariskan
                 dari generasi ke generasi. Tari merupakan ekspresi seni yang mendalam, mencerminkan kehidupan, alam, dan
                 sejarah masyarakat kami. Kami bangga mempersembahkan berbagai tarian yang kaya akan makna dan keindahan,
                 yang terus dipelihara dan dilestarikan sebagai bagian dari kekayaan budaya lokal.</p>
@@ -250,7 +277,7 @@
 
           <div class="row gy-4">
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
 
                 <div class="post-img" style="max-height: 200px; overflow: hidden;">
@@ -273,7 +300,7 @@
               </article>
             </div><!-- End post list item -->
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
 
                 <div class="post-img" style="max-height: 200px; overflow: hidden;">
@@ -297,7 +324,7 @@
               </article>
             </div><!-- End post list item -->
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300"  data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
 
                 <div class="post-img" style="max-height: 200px; overflow: hidden;">
@@ -323,147 +350,27 @@
           </div><!-- End recent posts list -->
 
         </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title title" id="exampleModalLabel">Pesta Tari Budaya</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><span class="info-label">Tanggal:</span> 25 Mei 2025</p>
+              <p><span class="info-label">Tempat:</span> Lapangan Utama Desa</p>
+              <p><span class="info-label">Deskripsi:</span> Nikmati keindahan tari tradisional yang dibawakan
+                  dengan pencahayaan malam yang magis. Sebuah pengalaman unik untuk merasakan budaya desa dalam suasana yang berbeda.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
 
       </section><!-- /Recent Posts Section -->
-      <!-- Testimonials Section -->
-      <section id="services" class="testimonials section">
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Testimoni</h2>
-          <p>Apa yang mereka katakan tentang kami</p>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  },
-                  "breakpoints": {
-                    "320": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 40
-                    },
-                    "1200": {
-                      "slidesPerView": 3,
-                      "spaceBetween": 10
-                    }
-                  }
-                }
-              </script>
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                      Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram
-                      malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                      minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
-                      velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                      veniam.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                  </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam
-                      enim
-                      culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
-                      quid.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                </div>
-              </div><!-- End testimonial item -->
-
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-        </div>
-
-      </section><!-- /Testimonials Section -->
 
       <!-- Call To Action Section -->
       <section id="call-to-action" class="call-to-action section choko-dark-background">
@@ -499,137 +406,55 @@
 
         <div class="container">
 
-          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Card</li>
-              <li data-filter=".filter-branding">Web</li>
-            </ul><!-- End Portfolio Filters -->
-
-            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1"
-                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+          <div class="row g-3">
+            <!-- Galeri dengan 9 gambar -->
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event1.jpg" alt="Gambar 1">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event2.jpg" alt="Gambar 2">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event3.jpg" alt="Gambar 3">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2"
-                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event4.jpg" alt="Gambar 4 (3:4)">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event5.jpg" alt="Gambar 5">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event6.jpg" alt="Gambar 6">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3"
-                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event7.jpg" alt="Gambar 7 (3:4)">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event8.jpg" alt="Gambar 8">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit</p>
-                  <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="gallery-item">
+                    <img src="assets/photo/event9.jpg" alt="Gambar 9">
                 </div>
-              </div><!-- End Portfolio Item -->
-
-            </div><!-- End Portfolio Container -->
-
-          </div>
+            </div>
+        </div>
+    
 
         </div>
 
@@ -656,11 +481,11 @@
 
           <div class="row gy-4">
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
 
                 <div class="post-img" style="max-height: 200px; overflow: hidden;">
-                  <img src="./assets/photo/event1.jpg" alt=""
+                  <img src="./assets/photo/event7.jpg" alt=""
                   style="width: 100%; height: fit-content; object-fit: cover;">
                 </div>
 
@@ -679,11 +504,11 @@
               </article>
             </div><!-- End post list item -->
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
 
                 <div class="post-img" style="max-height: 200px; overflow: hidden;">
-                  <img src="./assets/photo/event2.jpg" alt=""
+                  <img src="./assets/photo/event8.jpg" alt=""
                   style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
 
@@ -703,11 +528,11 @@
               </article>
             </div><!-- End post list item -->
 
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <article>
                 
                   <div class="post-img" style="max-height: 200px; overflow: hidden;">
-                    <img src="./assets/photo/event3.jpg" alt=""
+                    <img src="./assets/photo/event9.jpg" alt=""
                     style="width: 100%; height: fit-content; object-fit: cover;">
                   </div>
            
@@ -835,59 +660,33 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Jl. AW. Monginsidi No. 3 (Jungke), Karanganyar, Jawa Tengah</p>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                 <i class="bi bi-telephone flex-shrink-0"></i>
                 <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <h3>Telepom</h3>
+                  <p>+62 8392 8239 8239</p>
                 </div>
               </div><!-- End Info Item -->
 
               <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <h3>Email</h3>
+                  <p>asd@example.com</p>
                 </div>
               </div><!-- End Info Item -->
 
             </div>
 
             <div class="col-lg-8">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                data-aos-delay="200">
-                <div class="row gy-4">
+              <div class="d-flex justify-content-center">
 
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
-
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-
-                  <div class="col-md-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
-                  </div>
-
-                </div>
-              </form>
+                <div style="overflow:hidden;max-width:100%;width:700px;height:350px;"><div id="canvas-for-googlemap" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=smkn+2+karanganyar&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="googl-ehtml" href="https://www.bootstrapskins.com/themes" id="grab-map-data">premium bootstrap themes</a><style>#canvas-for-googlemap img{max-height:none;max-width:none!important;background:none!important;}</style></div>
+              </div>
             </div><!-- End Contact Form -->
 
           </div>
